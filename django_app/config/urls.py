@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from kakao import views
+
 urlpatterns = [
     url('admin/', admin.site.urls),
+    url(r'^keyboard/',views.keyboard),
+    url(r'^message/',views.message),
 ]
