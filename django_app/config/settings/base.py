@@ -32,7 +32,7 @@ SECRET_KEY = config_secret_common['django']['secret_key']
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*',
+    'localhost',
     '.compute.amazoneaws.com'
 ]
 

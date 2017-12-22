@@ -1,6 +1,6 @@
 import json
 
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -9,13 +9,14 @@ from django.views.decorators.csrf import csrf_exempt
 
 def keyboard(request):
     return JsonResponse({
-       'type' : 'buttons',
-       'buttons' : ['썸톡번역기','맛집 찾기','SomeTip', 'Q&A', '개발자의 한마디']
+        "type" : "buttons",
+        "buttons" : ["선택 1", "선택 2", "선택 3"]
     })
+
 
 @csrf_exempt
 def message(request):
-    message = ((request.body).decode('utf-8'))
+    message = (request.body).decode('utf-8')
     return_json_str = json.loads(message)
     return_str = return_json_str['content']
 
@@ -31,3 +32,5 @@ def message(request):
             }
         })
 
+def test(request):
+    return HttpResponse("정상작동")

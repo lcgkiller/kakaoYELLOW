@@ -4,7 +4,7 @@ from .base import *
 config_secret_deploy = json.loads(open(CONFIG_SECRET_DEPLOY_FILE).read())
 
 # WSGI application
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.deploy.application'
 
 # (170705) AWS S3 settings
 AWS_ACCESS_KEY_ID = config_secret_deploy['aws']['access_key_id']
