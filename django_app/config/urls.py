@@ -16,15 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import bithumb
 import crawl
 import kakao
 from kakao import views
 from crawl import views
+from bithumb import views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^keyboard/', kakao.views.keyboard),
     url(r'^message', kakao.views.message),
     url(r'^crawl', crawl.views.crawl),
-    url(r'^korbit', crawl.views.korbit_api)
+    url(r'^korbit', crawl.views.korbit_api),
+    url(r'^api', bithumb.views.user_transactions)
 ]

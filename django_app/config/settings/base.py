@@ -20,6 +20,7 @@ CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
 CONFIG_SECRET_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
 CONFIG_SECRET_DEBUG_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_debug.json')
 CONFIG_SECRET_DEPLOY_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_deploy.json')
+CONFIG_SECRET_API = os.path.join(CONFIG_SECRET_DIR, 'settings_bit.json')
 
 
 # Quick-start development settings - unsuitable for prgoduction
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     # django app
     'kakao',
     'crawl',
+    'bithumb'
 ]
 
 MIDDLEWARE = [
