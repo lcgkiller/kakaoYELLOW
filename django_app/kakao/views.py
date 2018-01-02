@@ -9,7 +9,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 def keyboard(request):
     return JsonResponse({
-        "type" : "text",
+        "type" : "buttons",
+        "buttons" : ["암호화폐 시세조회하기", "선택 2", "선택 3"]
     })
 
 
@@ -19,15 +20,14 @@ def message(request):
     return_json_str = json.loads(message)
     return_str = return_json_str['content']
 
-    requestMode = return_str.encode('utf-8')  # utf-8형식으로 인코딩하여 한글을 인식
-
-    if requestMode == '선택 1':
+    if return_str == '암호화폐 시세조회하기':
         return JsonResponse({
             'message': {
-                'text': "번역할 내용을 다음과 같이 입력해 주세요.(개발중)\n ex)번역 뭐해?, 번역 안녕ㅋㅋ\n 형식을 갖추지 않으면 답변이 나오지 않습니다ㅜㅜ."
+                'text': "시세 조회할 암호화폐를 입력하세요"
             },
             'keyboard': {
                 'type': 'text'  # 텍스트로 입력받기 위하여 키보드 타입을 text로 설정
             }
         })
+
 
